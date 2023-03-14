@@ -1,6 +1,3 @@
-// 20230313115946
-// https://youtube.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId=Ks-_Mh1QhMc&type=video&maxResults=25&key=AIzaSyCczqEbA1qN_0XSJzMgzuL5FlQ-8aBJpHE
-
 {
     "kind": "youtube#searchListResponse",
     "etag": "qC0ixKbI3NfA1NDMbELbDBEfcyk",

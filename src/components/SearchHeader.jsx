@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { BsSearch, BsYoutube } from "react-icons/bs";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import { BsYoutube } from "react-icons/bs";
+import { BsSearch } from "react-icons/bs";
 
 export default function SearchHeader() {
   const { keyword } = useParams();
@@ -12,12 +13,12 @@ export default function SearchHeader() {
     navigate(`/videos/${text}`);
   };
 
-  useEffect(() => setText(keyword || ""), [keyword]);
+ useEffect(() => setText(keyword || ""), [keyword])
 
   return (
-    <header className="w-full flex p-4 text-2xl border-b border-zinc-600 mb-4">
+    <header className="flex w-full p-4 text-2xl border-b border-zinc-600 mb-4">
       <Link to="/" className="flex items-center">
-        <BsYoutube className="text-4xl text-brand" />
+        <BsYoutube className="text-brand text-4xl" />
         <h1 className="text-3xl font-bold ml-2">Jintube</h1>
       </Link>
       <form className="w-full flex justify-center" onSubmit={handleSubmit}>
@@ -29,7 +30,7 @@ export default function SearchHeader() {
           onChange={(e) => setText(e.target.value)}
         />
         <button>
-          <BsSearch />
+          <BsSearch className="text-xl" />
         </button>
       </form>
     </header>

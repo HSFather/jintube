@@ -1,6 +1,3 @@
-// 20230313115912
-// https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&key=AIzaSyCczqEbA1qN_0XSJzMgzuL5FlQ-8aBJpHE
-
 {
     "kind": "youtube#videoListResponse",
     "etag": "AOW2O6dWybnRlK4TeusbAk01peo",

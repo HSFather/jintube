@@ -1,12 +1,19 @@
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import React, { Fragment } from "react";
 import { Outlet } from "react-router-dom";
 import SearchHeader from "./components/SearchHeader";
 
+const queryClient = new QueryClient();
+
 export default function App() {
   return (
     <>
+    {/* 네트워크 통신은 일어나지 않는 SearchHeader */}
       <SearchHeader />
-      <Outlet />
+      {/* outlet 어디서든 useQuery 사용가능*/}
+      <QueryClientProvider client={queryClient}> 
+        <Outlet />
+      </QueryClientProvider>
     </>
   );
 }

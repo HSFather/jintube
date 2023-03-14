@@ -14,13 +14,17 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <NotFound />,
     children: [
-      { index: true, element: <Videos /> },
+      {
+        index: true,
+        element: <Videos />,
+      },
       { path: "videos", element: <Videos /> },
       { path: "videos/:keyword", element: <Videos /> },
       { path: "videos/watch/:videoId", element: <VideoDetail /> },
     ],
   },
 ]);
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
