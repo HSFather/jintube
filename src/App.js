@@ -14,6 +14,7 @@ export default function App() {
       <YoutubeApiProvider>
         {/* outlet 어디서든 useQuery 사용가능*/}
         <QueryClientProvider client={queryClient}>
+          {/* index.js 의 children에 접근 */}
           <Outlet />
         </QueryClientProvider>
       </YoutubeApiProvider>
