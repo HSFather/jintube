@@ -17,4 +17,8 @@ export default class YoutubeClient {
     // # 프라이빗 함수는 클래스 외부에서는 호출 불가능
     return this.httpClient.get("videos", params);
   }
+  async channels(params) {
+    // # 프라이빗 함수는 클래스 외부에서는 호출 불가능
+    return this.httpClient.get("channels", params);
+  }
 }

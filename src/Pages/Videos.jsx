@@ -6,6 +6,7 @@ import { Oval } from "react-loader-spinner";
 import Youtube, { search } from "../api/youtube";
 import FakeYoutube from "../api/fakeYoutebeClient";
 import { useYoutubeApi } from "../context/YoutubeApiContext";
+import SideBar from "../components/SideBar";
 
 export default function Videos() {
   const { keyword } = useParams();
@@ -17,26 +18,31 @@ export default function Videos() {
   } = useQuery(["videos", keyword], () => youtube.search(keyword));
   return (
     <>
-      <div>Videos {keyword ? `${keyword}` : ""}</div>
-      {isLoading && (
-        <Oval
-          ariaLabel="loading-indicator"
-          height={30}
-          width={30}
-          strokeWidth={5}
-          strokeWidthSecondary={1}
-          color="red"
-          secondaryColor="white"
-        />
-      )}
-      {error && <p>문제</p>}
-      {videos && (
-        <ul>
-          {videos.map((video) => (
-            <VideoCard key={video.id} video={video} />
-          ))}
-        </ul>
-      )}
+      <section>
+        <SideBar />
+      </section>
+      <section>
+        <div> {keyword ? `${keyword}` : ""}</div>
+        {isLoading && (
+          <Oval
+            ariaLabel="loading-indicator"
+            height={30}
+            width={30}
+            strokeWidth={5}
+            strokeWidthSecondary={1}
+            color="red"
+            secondaryColor="white"
+          />
+        )}
+        {error && <p>문제</p>}
+        {videos && (
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 gap-y-4">
+            {videos.map((video) => (
+              <VideoCard key={video.id} video={video} />
+            ))}
+          </ul>
+        )}
+      </section>
     </>
   );
 }
