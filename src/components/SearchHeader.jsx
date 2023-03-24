@@ -3,10 +3,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { BsFillMoonFill, BsFillSunFill, BsYoutube } from "react-icons/bs";
 import { BsSearch } from "react-icons/bs";
 
-export default function SearchHeader({
-  isDarkMode,
-  toggleDarkMode,
-}: SearchHeader) {
+export default function SearchHeader({ isDarkMode, toggleDarkMode }) {
   const { keyword } = useParams();
   const [text, setText] = useState("");
   const navigate = useNavigate();
@@ -26,14 +23,14 @@ export default function SearchHeader({
       </Link>
       <form className="w-full flex justify-center" onSubmit={handleSubmit}>
         <input
-          className="w-7/12 p-2 border"
+          className="w-7/12 p-2 rounded-full border-4"
           type="text"
           placeholder="Search..."
           value={text}
           onChange={(e) => setText(e.target.value)}
         />
-        <button>
-          <BsSearch className="text-xl" />
+        <button className="pl-4">
+          <BsSearch className="text-2xl" />
         </button>
         <button
           className="pl-10"

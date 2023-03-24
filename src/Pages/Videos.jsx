@@ -18,7 +18,7 @@ export default function Videos() {
   } = useQuery(["videos", keyword], () => youtube.search(keyword));
   return (
     <>
-      <section>
+      <section className="flex flex-col">
         <SideBar />
       </section>
       <section>
