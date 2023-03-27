@@ -3,8 +3,6 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import VideoCard from "../components/VideoCard";
 import { Oval } from "react-loader-spinner";
-import Youtube, { search } from "../api/youtube";
-import FakeYoutube from "../api/fakeYoutebeClient";
 import { useYoutubeApi } from "../context/YoutubeApiContext";
 import SideBar from "../components/SideBar";
 
@@ -15,7 +13,9 @@ export default function Videos() {
     isLoading,
     error,
     data: videos,
-  } = useQuery(["videos", keyword], () => youtube.search(keyword));
+  } = useQuery(["videos", keyword], () => youtube.search(keyword), {
+    staleTime: 1000 * 60 * 1,
+  });
   return (
     <>
       <section className="flex flex-col">
